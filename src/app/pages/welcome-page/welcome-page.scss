@@ -1,0 +1,23 @@
+:host {
+
+  .welcome-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    h1 {
+      color: #0f172a;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #475569;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}

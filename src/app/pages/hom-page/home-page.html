@@ -1,0 +1,30 @@
+<div class="layout-container">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <h2>🚀 RSS</h2>
+      <p>Angular Components</p>
+    </div>
+
+    <nav class="menu">
+      <a routerLink="/"
+         [routerLinkActiveOptions]="{exact: true}"
+         routerLinkActive="active"
+         class="menu-item">Início</a>
+
+      <div class="menu-divider">Demonstrações</div>
+
+      @for (demo of demos; track demo.path) {
+        <a [routerLink]="demo.path"
+           routerLinkActive="active"
+           class="menu-item">
+          {{ demo.title }}
+        </a>
+      }
+    </nav>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
