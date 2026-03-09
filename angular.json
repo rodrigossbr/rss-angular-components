@@ -74,6 +74,32 @@
           "builder": "@angular/build:unit-test"
         }
       }
+    },
+    "rss-state-store": {
+      "projectType": "library",
+      "root": "projects/rss-state-store",
+      "sourceRoot": "projects/rss-state-store/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rss-state-store/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/rss-state-store/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/rss-state-store/tsconfig.spec.json"
+          }
+        }
+      }
     }
   }
 }

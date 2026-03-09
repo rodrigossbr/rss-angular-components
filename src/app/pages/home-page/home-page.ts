@@ -17,7 +17,7 @@ export class HomePage {
   protected demos: PageLink[] = [
     {
       path: '/state-store',
-      title: 'State Store (Signals)',
+      title: 'State Store',
       description: 'Gerenciamento de estado reativo e performático usando Angular Signals.'
     }
   ];

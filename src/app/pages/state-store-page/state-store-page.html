@@ -1,7 +1,55 @@
-<div class="demo-container">
-  <a routerLink="/" class="back-link">&larr; Voltar para a Home</a>
+@if (settingsStore.state$ | async; as settings) {
+  <div class="demo-container">
+    <header class="demo-header">
+      <h2>State Store Service (RxJS + Storage)</h2>
+      <p>Demonstração da classe base <code>StateStoreService</code> com persistência automática.</p>
+    </header>
 
-  <h2>State Store (Signals)</h2>
-  <p>Aqui vamos implementar o exemplo do gerenciamento de estado.</p>
+    <div class="card-preview" [ngClass]="settings.theme">
+      <div class="card-header">
+        <h3>Perfil do Usuário</h3>
+        <span class="badge" [class.active]="settings.notificationsEnabled">
+          {{ settings.notificationsEnabled ? 'Notificações ON' : 'Notificações OFF' }}
+        </span>
+      </div>
 
-</div>
+      <div class="card-body">
+        <div class="info-group">
+          <label>Nome do Usuário:</label>
+          <input type="text"
+                 [ngModel]="settings.username"
+                 (ngModelChange)="settingsStore.updatePartialState({ username: $event })"
+                 placeholder="Digite seu nome">
+        </div>
+
+        <div class="info-group">
+          <label>Tema Selecionado:</label>
+          <span class="current-value">{{ settings.theme | titlecase }}</span>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn-action" (click)="settingsStore.toggleTheme()">
+          Alternar para {{ settings.theme === 'light' ? 'Dark' : 'Light' }}
+        </button>
+
+        <button class="btn-action" (click)="settingsStore.updatePartialState({ notificationsEnabled: !settings.notificationsEnabled })">
+          Inverter Notificações
+        </button>
+
+        <button class="btn-reset" (click)="settingsStore.resetState()">
+          Resetar Estado Inicial
+        </button>
+      </div>
+    </div>
+
+    <section class="debug-section">
+      <h4>Debug do LocalStorage (Persistência)</h4>
+      <pre>{{ settings | json }}</pre>
+    </section>
+  </div>
+} @else {
+  <div class="loading-state">
+    <p>Carregando configurações persistidas...</p>
+  </div>
+}
