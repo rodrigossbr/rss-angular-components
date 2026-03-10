@@ -1,0 +1,21 @@
+:host {
+
+  .debug-section {
+    margin-top: 40px;
+
+    h4 {
+      color: #64748b;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    pre {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+  }
+}

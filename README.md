@@ -1,59 +1,65 @@
-# RssAngularComponents
+# rss-angular-components 🧪
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+Este é um workspace monorepo desenvolvido em **Angular 21**, projetado como um laboratório técnico para a criação de bibliotecas e componentes reutilizáveis de alta performance. O projeto utiliza as práticas mais modernas do ecossistema Angular para garantir escalabilidade e manutenibilidade.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![SCSS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-To start a local development server, run:
 
+## 📂 Estrutura do Workspace
+
+O projeto está organizado para separar as bibliotecas de infraestrutura das aplicações de demonstração:
+
+### 🏗️ Bibliotecas (`/projects`)
+* **`rss-state-store`**: Biblioteca core para gerenciamento de estado reativo. Possui suporte nativo a persistência automática (Local/Session Storage) e fluxos de dados baseados em RxJS.
+
+### 🖥️ Aplicação de Demo (`/src/app`)
+* **`pages/`**: Páginas dedicadas a testar as funcionalidades em tempo real.
+  * `state-store-page`: Demonstração prática da biblioteca de estado.
+  * `home-page` / `welcome-page`: Interfaces de navegação inicial.
+* **`shared/`**: Componentes de suporte reutilizáveis dentro da demo.
+
+---
+
+## 🛠️ Tecnologias Principais
+
+* **Angular 21**: Utilizando as últimas novidades como *Standalone Components* e o novo *Control Flow* (`@if`, `@for`).
+* **Vitest**: Framework de testes de próxima geração, oferecendo uma execução de unit tests significativamente mais rápida que o Karma/Jasmine.
+* **RxJS**: Gerenciamento de fluxos assíncronos e estados reativos através de Observables.
+* **SCSS**: Estilização modular e avançada.
+
+---
+
+## 🚀 Executando a Aplicação
+
+Para desenvolver e testar o workspace localmente, utilize os seguintes comandos:
+
+### Projeto Principal (Demo)
 ```bash
-ng serve
+   # Iniciar o servidor de desenvolvimento do app de demo
+   npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### Bibliotecas
 ```bash
-ng generate component component-name
+   # Gerar o build da biblioteca rss-state-store
+   npm run build:lib:rss-state-store
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🧪 Qualidade e Testes
+
+A qualidade do código é garantida através do **Vitest**, que é o padrão de testes deste workspace.
 
 ```bash
-ng generate --help
+# Executar todos os testes do projeto
+npm run test
+
+# Executar testes apenas da biblioteca de estado
+npm run test:lib:rss-state-store
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<div align="center">
+<p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo Silveira dos Santos</strong></p>
+<p>© 2026 Todos os direitos reservados.</p>
+</div>

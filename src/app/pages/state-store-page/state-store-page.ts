@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {UserSettingsStore} from './stores/user-settings.store';
 import {AsyncPipe, JsonPipe, NgClass, TitleCasePipe} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {JsonSection} from '../../shared/components/json-section/json-section';
 
 @Component({
   selector: 'app-state-store-page',
@@ -10,7 +11,8 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     JsonPipe,
     NgClass,
-    AsyncPipe
+    AsyncPipe,
+    JsonSection
   ],
   templateUrl: './state-store-page.html',
   styleUrl: './state-store-page.scss',

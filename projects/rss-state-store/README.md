@@ -2,6 +2,9 @@
 
 Uma biblioteca leve e reativa para gerenciamento de estado no Angular 21+, focada em persistência automática e simplicidade.
 
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+
 ## 📋 Características
 
 - **Reatividade com RxJS:** Baseada em `ReplaySubject` para garantir que novos inscritos recebam o último estado.
@@ -93,5 +96,7 @@ Para rodar os testes específicos desta biblioteca:
 npm run test:lib
 ```
 
-## 📄 Licença
-Distribuído sob a licença MIT. Parte do projeto rss-angular-components.
+<div align="center">
+<p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo Silveira dos Santos</strong></p>
+<p>© 2026 Todos os direitos reservados.</p>
+</div>

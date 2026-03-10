@@ -33,7 +33,8 @@
           Alternar para {{ settings.theme === 'light' ? 'Dark' : 'Light' }}
         </button>
 
-        <button class="btn-action" (click)="settingsStore.updatePartialState({ notificationsEnabled: !settings.notificationsEnabled })">
+        <button class="btn-action"
+                (click)="settingsStore.updatePartialState({ notificationsEnabled: !settings.notificationsEnabled })">
           Inverter Notificações
         </button>
 
@@ -43,10 +44,10 @@
       </div>
     </div>
 
-    <section class="debug-section">
-      <h4>Debug do LocalStorage (Persistência)</h4>
-      <pre>{{ settings | json }}</pre>
-    </section>
+    <app-json-section
+      title="Debug do LocalStorage (Persistência)"
+      [data]="settings"
+    />
   </div>
 } @else {
   <div class="loading-state">
