@@ -89,13 +89,6 @@ Use o novo Control Flow do Angular (@if) e o pipe async.
 | `setCustomKey(key)` | Altera a chave de persistência dinamicamente (ex: ID do usuário). |
 
 
-## 🧪 Testes
-Para rodar os testes específicos desta biblioteca:
-
-```bash
-npm run test:lib
-```
-
 <div align="center">
 <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo Silveira dos Santos</strong></p>
 <p>© 2026 Todos os direitos reservados.</p>

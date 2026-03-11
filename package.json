@@ -10,7 +10,7 @@
     "build:lib:rss-state-store": "ng build rss-state-store",
     "test:lib:rss-state-store": "vitest run --project rss-state-store",
     "test:lib:watch:rss-state-store": "vitest --project rss-state-store",
-    "publish:lib:rss-state-store": "npm run build:lib && cd dist/rss-state-store && npm publish"
+    "publish:lib:rss-state-store": "npm run build:lib:rss-state-store && cd dist/rss-state-store && npm publish --access public"
   },
   "prettier": {
     "printWidth": 100,

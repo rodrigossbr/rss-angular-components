@@ -6,60 +6,58 @@ Este é um workspace monorepo desenvolvido em **Angular 21**, projetado como um 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![SCSS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
+## 📚 Bibliotecas Disponíveis
+
+| Biblioteca | Versão  | NPM | Descrição |
+| :--- |:--------| :--- | :--- |
+| **`rss-state-store`** | `0.0.2` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Gerenciamento de estado reativo com persistência automática. |
 
 ## 📂 Estrutura do Workspace
 
 O projeto está organizado para separar as bibliotecas de infraestrutura das aplicações de demonstração:
 
 ### 🏗️ Bibliotecas (`/projects`)
-* **`rss-state-store`**: Biblioteca core para gerenciamento de estado reativo. Possui suporte nativo a persistência automática (Local/Session Storage) e fluxos de dados baseados em RxJS.
+* **`rss-state-store`**: Biblioteca core para gerenciamento de estado reativo disponível no escopo `@rssbr`.
 
 ### 🖥️ Aplicação de Demo (`/src/app`)
 * **`pages/`**: Páginas dedicadas a testar as funcionalidades em tempo real.
   * `state-store-page`: Demonstração prática da biblioteca de estado.
   * `home-page` / `welcome-page`: Interfaces de navegação inicial.
-* **`shared/`**: Componentes de suporte reutilizáveis dentro da demo.
+* **`shared/`**: Componentes de suporte reutilizáveis dentro da demo como o `json-section`.
 
 ---
 
 ## 🛠️ Tecnologias Principais
 
 * **Angular 21**: Utilizando as últimas novidades como *Standalone Components* e o novo *Control Flow* (`@if`, `@for`).
-* **Vitest**: Framework de testes de próxima geração, oferecendo uma execução de unit tests significativamente mais rápida que o Karma/Jasmine.
-* **RxJS**: Gerenciamento de fluxos assíncronos e estados reativos através de Observables.
+* **Vitest**: Framework de testes de próxima geração, oferecendo execução ultrarrápida.
+* **RxJS**: Gerenciamento de fluxos assíncronos e estados reativos.
 * **SCSS**: Estilização modular e avançada.
 
 ---
 
 ## 🚀 Executando a Aplicação
 
-Para desenvolver e testar o workspace localmente, utilize os seguintes comandos:
+Utilize os comandos abaixo para gerenciar o workspace através do terminal:
 
 ### Projeto Principal (Demo)
-```bash
-   # Iniciar o servidor de desenvolvimento do app de demo
-   npm start
-```
-
-### Bibliotecas
-```bash
-   # Gerar o build da biblioteca rss-state-store
-   npm run build:lib:rss-state-store
-```
+  ```bash
+     # Iniciar o servidor de desenvolvimento do app de demo
+     npm start
+  ```
 
 ## 🧪 Qualidade e Testes
 
-A qualidade do código é garantida através do **Vitest**, que é o padrão de testes deste workspace.
+A qualidade do código é garantida através do Vitest, que é o padrão de testes deste workspace.
 
-```bash
-# Executar todos os testes do projeto
-npm run test
+  ```bash
+  # Executar todos os testes do projeto
+  npm test 
+  ```
 
-# Executar testes apenas da biblioteca de estado
-npm run test:lib:rss-state-store
-```
+
 
 <div align="center">
-<p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo Silveira dos Santos</strong></p>
-<p>© 2026 Todos os direitos reservados.</p>
+  <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo Silveira dos Santos</strong></p>
+  <p>© 2026 Todos os direitos reservados.</p>
 </div>
