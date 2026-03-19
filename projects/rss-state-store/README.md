@@ -90,6 +90,11 @@ Use o novo Control Flow do Angular (@if) e o pipe async.
 
 
 <div align="center">
-<p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo Silveira dos Santos</strong></p>
-<p>© 2026 Todos os direitos reservados.</p>
+  <hr>
+  <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo S. Santos</strong></p>
+  <img src="https://img.shields.io/badge/Local-Imbé%2C%20RS-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Local">
+  <a href="mailto:rodrigoss.br%40gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-rodrigoss.br%40gmail.com-green?style=flat-square&logo=gmail&logoColor=white" alt="Email">
+  </a>
+  <p>© 2026 Todos os direitos reservados.</p>
 </div>

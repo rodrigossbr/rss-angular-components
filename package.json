@@ -1,6 +1,30 @@
 {
   "name": "rss-angular-components",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": "Rodrigo S. Santos",
+  "license": "MIT",
+  "homepage": "https://github.com/rodrigossbr/rss-angular-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigossbr/rss-angular-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rodrigossbr/rss-angular-components/issues"
+  },
+  "description": "Monorepo de componentes e bibliotecas Angular de alta performance, incluindo gerenciamento de estado e integração com Keycloak.",
+  "keywords": [
+    "angular",
+    "monorepo",
+    "nx",
+    "state-management",
+    "keycloak-angular",
+    "sso",
+    "typescript-library",
+    "reactive-programming",
+    "rssbr",
+    "design-system",
+    "infrastructure"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",

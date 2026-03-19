@@ -1,6 +1,29 @@
 {
   "name": "@rssbr/state-store",
-  "version": "0.0.2",
+  "version": "0.0.5",
+  "author": "Rodrigo S. Santos",
+  "license": "MIT",
+  "homepage": "https://github.com/rodrigossbr/rss-angular-components/tree/main/projects/rss-state-store#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigossbr/rss-angular-components.git",
+    "directory": "projects/rssbr/state-store"
+  },
+  "bugs": {
+    "url": "https://github.com/rodrigossbr/rss-angular-components/issues"
+  },
+  "description": "Uma biblioteca leve e reativa para gerenciamento de estado em aplicações Angular.",
+  "keywords": [
+    "angular",
+    "state-management",
+    "rxjs",
+    "store",
+    "reactive",
+    "rssbr",
+    "frontend",
+    "typescript",
+    "observable-store"
+  ],
   "peerDependencies": {
     "@angular/common": "^21.2.0",
     "@angular/core": "^21.2.0",

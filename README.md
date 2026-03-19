@@ -10,7 +10,7 @@ Este é um workspace monorepo desenvolvido em **Angular 21**, projetado como um 
 
 | Biblioteca | Versão  | NPM | Descrição |
 | :--- |:--------| :--- | :--- |
-| **`rss-state-store`** | `0.0.2` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Gerenciamento de estado reativo com persistência automática. |
+| **`rss-state-store`** | `0.0.5` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Gerenciamento de estado reativo com persistência automática. |
 
 ## 📂 Estrutura do Workspace
 
@@ -55,9 +55,12 @@ A qualidade do código é garantida através do Vitest, que é o padrão de test
   npm test 
   ```
 
-
-
 <div align="center">
-  <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo Silveira dos Santos</strong></p>
+  <hr>
+  <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo S. Santos</strong></p>
+  <img src="https://img.shields.io/badge/Local-Imbé%2C%20RS-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Local">
+  <a href="mailto:rodrigoss.br%40gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-rodrigoss.br%40gmail.com-green?style=flat-square&logo=gmail&logoColor=white" alt="Email">
+  </a>
   <p>© 2026 Todos os direitos reservados.</p>
 </div>
