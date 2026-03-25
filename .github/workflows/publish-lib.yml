@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'projects/rss-state-store/package.json'
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -16,13 +17,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.20.0'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: '22'
+
+      - name: Setup npm authentication
+        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: npm install
 
       - name: Build and Publish
-        run: npm run publish:lib:rss-state-store
+        run: |
+          npm run build:lib:rss-state-store
+          cd dist/rss-state-store
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
