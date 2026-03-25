@@ -1,30 +1,30 @@
 # @rss-state-store 🚀
 
-Uma biblioteca leve e reativa para gerenciamento de estado no Angular 21+, focada em persistência automática e simplicidade.
+A lightweight and reactive library for state management in Angular 21+, focused on automatic persistence and simplicity.
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-## 📋 Características
+## 📋 Features
 
-- **Reatividade com RxJS:** Baseada em `ReplaySubject` para garantir que novos inscritos recebam o último estado.
-- **Persistência Automática:** Suporte nativo para `localStorage` e `sessionStorage`.
-- **Prefixação de Chaves:** Evita colisão de dados entre diferentes aplicações ou módulos.
-- **Totalmente Tipada:** Desenvolvida em TypeScript para máxima segurança em tempo de compilação.
-- **Testada com Vitest:** Alta performance e confiabilidade nos testes unitários.
+- **Reactivity with RxJS:** Based on `ReplaySubject` to ensure new subscribers receive the latest state.
+- **Automatic Persistence:** Native support for `localStorage` and `sessionStorage`.
+- **Key Prefixing:** Prevents data collision between different applications or modules.
+- **Fully Typed:** Developed in TypeScript for maximum compile-time safety.
+- **Tested with Vitest:** High performance and reliability in unit tests.
 
-## ⚙️ Instalação (Uso Local)
+## ⚙️ Installation (Local Usage)
 
-No seu projeto principal, importe através do path mapeado no `tsconfig.json`:
+In your main project, import via the path mapped in `tsconfig.json`:
 
 ```typescript
 import { StateStoreService } from 'rss-state-store';
 ```
 
-## 🚀 Como usar
+## 🚀 How to Use
 
-### 1. Defina o seu Modelo de Estado
-Crie uma interface que represente os dados que você deseja armazenar.
+### 1. Define Your State Model
+Create an interface that represents the data you want to store.
 
 ```typescript
 export interface UserSettings {
@@ -34,8 +34,8 @@ export interface UserSettings {
 }
 ```
 
-### 2. Crie a sua Store
-Estenda a classe StateStoreService e implemente o método initialState().
+### 2. Create Your Store
+Extend the `StateStoreService` class and implement the `initialState()` method.
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -50,12 +50,12 @@ export class UserSettingsStore extends StateStoreService<UserSettings> {
   public override initialState(): UserSettings {
     return {
       theme: 'light',
-      username: 'Visitante',
+      username: 'Guest',
       notificationsEnabled: true
     };
   }
 
-  // Métodos customizados para sua regra de negócio
+  // Custom methods for your business logic
   public toggleTheme(): void {
     const newTheme = this.getState().theme === 'light' ? 'dark' : 'light';
     this.updatePartialState({ theme: newTheme });
@@ -63,38 +63,38 @@ export class UserSettingsStore extends StateStoreService<UserSettings> {
 }
 ```
 
-### 3. Utilize no Componente
-Use o novo Control Flow do Angular (@if) e o pipe async.
+### 3. Use in a Component
+Use Angular's new Control Flow (`@if`) and the `async` pipe.
 
 ```html
 @if (settingsStore.state$ | async; as settings) {
   <div [class.dark]="settings.theme === 'dark'">
-    <h1>Olá, {{ settings.username }}!</h1>
-    <button (click)="settingsStore.toggleTheme()">Trocar Tema</button>
+    <h1>Hello, {{ settings.username }}!</h1>
+    <button (click)="settingsStore.toggleTheme()">Toggle Theme</button>
   </div>
 }
 ```
 
-## 🛠️ API Principal
+## 🛠️ Main API
 
 ### `StateStoreService<T>`
 
-| Método | Descrição |
+| Method | Description |
 | :--- | :--- |
-| `state$` | Observable que emite o estado atual reativamente. |
-| `getState()` | Retorna o snapshot síncrono do estado atual. |
-| `updateState(newState)` | Substitui o estado completo. |
-| `updatePartialState(partial)` | Mescla o estado atual com as novas propriedades (Merge). |
-| `resetState()` | Volta a store para o valor definido em `initialState`. |
-| `setCustomKey(key)` | Altera a chave de persistência dinamicamente (ex: ID do usuário). |
+| `state$` | Observable that reactively emits the current state. |
+| `getState()` | Returns a synchronous snapshot of the current state. |
+| `updateState(newState)` | Replaces the entire state. |
+| `updatePartialState(partial)` | Merges the current state with new properties (Merge). |
+| `resetState()` | Resets the store to the value defined in `initialState`. |
+| `setCustomKey(key)` | Dynamically changes the persistence key (e.g., user ID). |
 
 
 <div align="center">
   <hr>
-  <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo S. Santos</strong></p>
-  <img src="https://img.shields.io/badge/Local-Imbé%2C%20RS-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Local">
+  <p>Developed with 💻 and ☕ by <strong>Rodrigo S. Santos</strong></p>
+  <img src="https://img.shields.io/badge/Location-Imbé%2C%20RS-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Location">
   <a href="mailto:rodrigoss.br%40gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-rodrigoss.br%40gmail.com-green?style=flat-square&logo=gmail&logoColor=white" alt="Email">
   </a>
-  <p>© 2026 Todos os direitos reservados.</p>
+  <p>© 2026 All rights reserved.</p>
 </div>

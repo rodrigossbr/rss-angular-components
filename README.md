@@ -1,66 +1,66 @@
 # rss-angular-components 🧪
 
-Este é um workspace monorepo desenvolvido em **Angular 21**, projetado como um laboratório técnico para a criação de bibliotecas e componentes reutilizáveis de alta performance. O projeto utiliza as práticas mais modernas do ecossistema Angular para garantir escalabilidade e manutenibilidade.
+This is a monorepo workspace developed in **Angular 21**, designed as a technical lab for creating high-performance reusable libraries and components. The project uses the most modern practices of the Angular ecosystem to ensure scalability and maintainability.
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![SCSS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-## 📚 Bibliotecas Disponíveis
+## 📚 Available Libraries
 
-| Biblioteca | Versão  | NPM | Descrição |
+| Library | Version | NPM | Description |
 | :--- |:--------| :--- | :--- |
-| **`rss-state-store`** | `0.0.5` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Gerenciamento de estado reativo com persistência automática. |
+| **`rss-state-store`** | `0.0.5` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Reactive state management with automatic persistence. |
 
-## 📂 Estrutura do Workspace
+## 📂 Workspace Structure
 
-O projeto está organizado para separar as bibliotecas de infraestrutura das aplicações de demonstração:
+The project is organized to separate infrastructure libraries from demonstration applications:
 
-### 🏗️ Bibliotecas (`/projects`)
-* **`rss-state-store`**: Biblioteca core para gerenciamento de estado reativo disponível no escopo `@rssbr`.
+### 🏗️ Libraries (`/projects`)
+* **`rss-state-store`**: Core library for reactive state management available in the `@rssbr` scope.
 
-### 🖥️ Aplicação de Demo (`/src/app`)
-* **`pages/`**: Páginas dedicadas a testar as funcionalidades em tempo real.
-  * `state-store-page`: Demonstração prática da biblioteca de estado.
-  * `home-page` / `welcome-page`: Interfaces de navegação inicial.
-* **`shared/`**: Componentes de suporte reutilizáveis dentro da demo como o `json-section`.
-
----
-
-## 🛠️ Tecnologias Principais
-
-* **Angular 21**: Utilizando as últimas novidades como *Standalone Components* e o novo *Control Flow* (`@if`, `@for`).
-* **Vitest**: Framework de testes de próxima geração, oferecendo execução ultrarrápida.
-* **RxJS**: Gerenciamento de fluxos assíncronos e estados reativos.
-* **SCSS**: Estilização modular e avançada.
+### 🖥️ Demo Application (`/src/app`)
+* **`pages/`**: Pages dedicated to testing functionalities in real-time.
+  * `state-store-page`: Practical demonstration of the state library.
+  * `home-page` / `welcome-page`: Initial navigation interfaces.
+* **`shared/`**: Reusable support components within the demo, such as `json-section`.
 
 ---
 
-## 🚀 Executando a Aplicação
+## 🛠️ Core Technologies
 
-Utilize os comandos abaixo para gerenciar o workspace através do terminal:
+* **Angular 21**: Using the latest features like *Standalone Components* and the new *Control Flow* (`@if`, `@for`).
+* **Vitest**: Next-generation testing framework, offering ultra-fast execution.
+* **RxJS**: Management of asynchronous streams and reactive states.
+* **SCSS**: Modular and advanced styling.
 
-### Projeto Principal (Demo)
+---
+
+## 🚀 Running the Application
+
+Use the commands below to manage the workspace through the terminal:
+
+### Main Project (Demo)
   ```bash
-     # Iniciar o servidor de desenvolvimento do app de demo
+     # Start the development server for the demo app
      npm start
   ```
 
-## 🧪 Qualidade e Testes
+## 🧪 Quality and Testing
 
-A qualidade do código é garantida através do Vitest, que é o padrão de testes deste workspace.
+Code quality is ensured through Vitest, which is the testing standard for this workspace.
 
   ```bash
-  # Executar todos os testes do projeto
+  # Run all project tests
   npm test 
   ```
 
 <div align="center">
   <hr>
-  <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo S. Santos</strong></p>
-  <img src="https://img.shields.io/badge/Local-Imbé%2C%20RS-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Local">
+  <p>Developed with 💻 and ☕ by <strong>Rodrigo S. Santos</strong></p>
+  <img src="https://img.shields.io/badge/Location-Imbé%2C%20RS-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Location">
   <a href="mailto:rodrigoss.br%40gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-rodrigoss.br%40gmail.com-green?style=flat-square&logo=gmail&logoColor=white" alt="Email">
   </a>
-  <p>© 2026 Todos os direitos reservados.</p>
+  <p>© 2026 All rights reserved.</p>
 </div>
