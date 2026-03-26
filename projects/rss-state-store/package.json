@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodrigossbr/rss-angular-components.git",
-    "directory": "projects/rssbr/state-store"
+    "directory": "projects/rss-state-store"
   },
   "bugs": {
     "url": "https://github.com/rodrigossbr/rss-angular-components/issues"

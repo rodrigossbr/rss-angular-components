@@ -1,36 +1,41 @@
-name: Publish RSS State Store
+name: Publish @rssbr/state-store
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'projects/rss-state-store/package.json'
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          ref: ${{ github.head_ref || github.ref_name }}
 
-      - name: Setup npm authentication
-        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build and Publish
-        run: |
-          npm run build:lib:rss-state-store
-          cd dist/rss-state-store
-          npm publish --access public
+      - name: Build and Publish Library
+        run: npm run publish:lib:rss-state-store
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit and Push README changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "docs: Update README versions [skip ci]" || echo "No changes to commit"
+          # Forçamos o push para o branch 'main' em vez da tag
+          git push origin HEAD:main
