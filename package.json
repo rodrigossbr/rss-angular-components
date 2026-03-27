@@ -33,8 +33,10 @@
     "test": "ng test",
     "build:lib:rss-state-store": "ng build rss-state-store",
     "publish:lib:rss-state-store": "npm run update-readme:lib:rss-state-store && npm run build:lib:rss-state-store && cd dist/rss-state-store && npm publish --access public --provenance --registry=https://registry.npmjs.org/",
-    "test:lib:rss-state-store": "vitest run --project rss-state-store",
-    "test:lib:watch:rss-state-store": "vitest --project rss-state-store",
+    "test:lib:rss-state-store": "vitest run",
+    "test:lib:watch:rss-state-store": "vitest",
+    "test:coverage:rss-state-store": "vitest run --coverage",
+    "test:coverage:open:rss-state-store": "open-cli coverage/index.html",
     "update-readme:lib:rss-state-store": "node scripts/update-readme-version.js"
   },
   "prettier": {
@@ -48,6 +50,10 @@
         }
       }
     ]
+  },
+  "overrides": {
+    "vitest": "^1.6.0",
+    "zone.js": "~0.15.0"
   },
   "private": true,
   "packageManager": "npm@11.6.1",
@@ -65,9 +71,13 @@
     "@angular/build": "^21.1.2",
     "@angular/cli": "^21.1.2",
     "@angular/compiler-cli": "^21.1.0",
+    "@angular/platform-browser-dynamic": "^21.1.0",
+    "@vitest/coverage-v8": "^1.6.0",
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.2.0",
+    "open-cli": "^8.0.0",
     "typescript": "~5.9.2",
-    "vitest": "^4.0.8"
+    "vitest": "^1.6.0",
+    "zone.js": "~0.15.0"
   }
 }

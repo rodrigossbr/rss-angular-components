@@ -2,7 +2,7 @@
 
 ![npm version](https://img.shields.io/badge/version-1.0.1-blue)
 
-A lightweight and reactive library for state management in Angular 21+, focused on automatic persistence and simplicity.
+A lightweight and reactive library for state management in Angular 13+, focused on automatic persistence and simplicity.
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)

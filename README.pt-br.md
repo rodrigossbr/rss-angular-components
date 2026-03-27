@@ -2,15 +2,15 @@
 
 Este é um workspace monorepo desenvolvido em **Angular 21**, projetado como um laboratório técnico para a criação de bibliotecas e componentes reutilizáveis de alta performance. O projeto utiliza as práticas mais modernas do ecossistema Angular para garantir escalabilidade e manutenibilidade.
 
-![Angular](https.img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![TypeScript](https.img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![SCSS](https.img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![SCSS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
 ## 📚 Bibliotecas Disponíveis
 
 | Biblioteca | Versão  | NPM | Descrição |
 | :--- |:--------| :--- | :--- |
-| **`rss-state-store`** | `1.0.1` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Gerenciamento de estado reativo com persistência automática. |
+| **`rss-state-store`** | `1.0.1` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Gerenciamento de estado reativo com persistência automática, compatível com Angular 13+. |
 
 ## 📂 Estrutura do Workspace
 
@@ -60,7 +60,7 @@ A qualidade do código é garantida através do Vitest, que é o padrão de test
   <p>Desenvolvido com 💻 e ☕ por <strong>Rodrigo S. Santos</strong></p>
   <img src="https://img.shields.io/badge/Local-Imbé%2C%20RS-blue?style=flat-square&logo=googlemaps&logoColor=white" alt="Local">
   <a href="mailto:rodrigoss.br%40gmail.com" target="_blank">
-    <img src="https.img.shields.io/badge/Email-rodrigoss.br%40gmail.com-green?style=flat-square&logo=gmail&logoColor=white" alt="Email">
+    <img src="https://img.shields.io/badge/Email-rodrigoss.br%40gmail.com-green?style=flat-square&logo=gmail&logoColor=white" alt="Email">
   </a>
   <p>© 2026 Todos os direitos reservados.</p>
 </div>

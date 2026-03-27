@@ -10,7 +10,7 @@ This is a monorepo workspace developed in **Angular 21**, designed as a technica
 
 | Library | Version | NPM | Description |
 | :--- |:--------| :--- | :--- |
-| **`rss-state-store`** | `1.0.1` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Reactive state management with automatic persistence. |
+| **`rss-state-store`** | `1.0.1` | [![npm](https://img.shields.io/badge/npm-@rssbr/state--store-cb3837?style=flat-square&logo=npm)](https://www.npmjs.com/package/@rssbr/state-store) | Reactive state management with automatic persistence, compatible with Angular 13+. |
 
 ## 📂 Workspace Structure
 
