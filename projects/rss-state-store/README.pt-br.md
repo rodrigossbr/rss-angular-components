@@ -1,6 +1,6 @@
 # @rss-state-store 🚀
 
-![npm version](https://img.shields.io/badge/version-1.2.0-blue)
+![npm version](https://img.shields.io/badge/version-1.2.1-blue)
 
 Uma biblioteca leve e reativa para gerenciamento de estado no Angular 13+, focada em persistência automática e simplicidade.
 
