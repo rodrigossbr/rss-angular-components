@@ -1,18 +1,19 @@
 /**
- * Serviço utilitário para manipulação de Storage (Local e Session) do navegador.
+ * @class StorageService
+ * @description Serviço utilitário para manipulação de Storage (Local e Session) do navegador.
  * Fornece uma camada de abstração com suporte a prefixos para evitar colisão de chaves.
  */
 export class StorageService {
-  /** Armazena a instância do storage selecionado (localStorage ou sessionStorage). */
+  /** @private Armazena a instância do storage selecionado (localStorage ou sessionStorage). */
   private readonly storage: Storage;
 
-  /** Prefixo aplicado a todas as chaves gerenciadas por esta instância. */
+  /** @private Prefixo aplicado a todas as chaves gerenciadas por esta instância. */
   private readonly prefix: string;
 
   /**
-   * Cria uma nova instância do StorageService.
-   * @param prefix O prefixo a ser utilizado em todas as chaves (ex: 'app-nome').
-   * @param useLocalStorage Define se deve usar localStorage (true) ou sessionStorage (false). Padrão: false.
+   * @constructor
+   * @param {string} prefix O prefixo a ser utilizado em todas as chaves (ex: 'app-nome').
+   * @param {boolean} useLocalStorage Define se deve usar localStorage (true) ou sessionStorage (false). Padrão: false.
    */
   public constructor(prefix: string, useLocalStorage: boolean = false) {
     this.prefix = prefix;
@@ -20,9 +21,11 @@ export class StorageService {
   }
 
   /**
-   * Armazena um item no storage. O valor é automaticamente convertido para JSON.
-   * @param key A chave identificadora do item.
-   * @param value O valor a ser armazenado (objeto, array, string, etc).
+   * @method setItem
+   * @description Armazena um item no storage. O valor é automaticamente convertido para JSON.
+   * @template T O tipo do valor a ser armazenado.
+   * @param {string} key A chave identificadora do item.
+   * @param {T} value O valor a ser armazenado (objeto, array, string, etc).
    */
   public setItem<T>(key: string, value: T): void {
     const fullKey = this.getKey(key);
@@ -31,9 +34,11 @@ export class StorageService {
   }
 
   /**
-   * Recupera um item do storage e realiza o parse do JSON para o tipo original.
-   * @param key A chave identificadora do item.
-   * @returns O valor convertido para o tipo T ou null caso não exista.
+   * @method getItem
+   * @description Recupera um item do storage e realiza o parse do JSON para o tipo original.
+   * @template T O tipo esperado do valor a ser retornado.
+   * @param {string} key A chave identificadora do item.
+   * @returns {T | null} O valor convertido para o tipo T ou null caso não exista.
    */
   public getItem<T>(key: string): T | null {
     const fullKey = this.getKey(key);
@@ -42,8 +47,9 @@ export class StorageService {
   }
 
   /**
-   * Retorna todas as chaves presentes no storage que possuem o prefixo definido nesta instância.
-   * @returns Array de chaves (strings) filtradas pelo prefixo.
+   * @method getKeys
+   * @description Retorna todas as chaves presentes no storage que possuem o prefixo definido nesta instância.
+   * @returns {string[]} Array de chaves (strings) filtradas pelo prefixo.
    */
   public getKeys(): string[] {
     return Object.keys(this.storage).filter((key) => {
@@ -52,8 +58,9 @@ export class StorageService {
   }
 
   /**
-   * Remove um item específico do storage utilizando a chave e o prefixo.
-   * @param key A chave do item a ser removido.
+   * @method removeItem
+   * @description Remove um item específico do storage utilizando a chave e o prefixo.
+   * @param {string} key A chave do item a ser removido.
    */
   public removeItem(key: string): void {
     const fullKey = this.getKey(key);
@@ -61,7 +68,8 @@ export class StorageService {
   }
 
   /**
-   * Remove todos os itens do storage que começam com o prefixo definido nesta instância.
+   * @method clear
+   * @description Remove todos os itens do storage que começam com o prefixo definido nesta instância.
    * Útil para limpar o estado de um módulo específico sem afetar outros dados do domínio.
    */
   public clear(): void {
@@ -73,7 +81,8 @@ export class StorageService {
   }
 
   /**
-   * Método destrutivo que limpa completamente o localStorage e sessionStorage do navegador.
+   * @method clearAllStorages
+   * @description Método destrutivo que limpa completamente o localStorage e sessionStorage do navegador.
    * @warning Use com cautela, pois apaga dados de todos os prefixos e aplicações no mesmo domínio.
    */
   public clearAllStorages(): void {
@@ -82,9 +91,11 @@ export class StorageService {
   }
 
   /**
-   * Gera a chave completa concatenando o prefixo e a chave fornecida.
-   * @param key Chave base.
-   * @returns Chave formatada como `prefixo:chave`.
+   * @private
+   * @method getKey
+   * @description Gera a chave completa concatenando o prefixo e a chave fornecida.
+   * @param {string} key Chave base.
+   * @returns {string} Chave formatada como `prefixo:chave`.
    */
   private getKey(key: string): string {
     return `${this.prefix}:${key}`;
