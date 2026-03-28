@@ -28,9 +28,13 @@ export class StorageService {
    * @param {T} value O valor a ser armazenado (objeto, array, string, etc).
    */
   public setItem<T>(key: string, value: T): void {
-    const fullKey = this.getKey(key);
-    const stringValue = JSON.stringify(value);
-    this.storage.setItem(fullKey, stringValue);
+    try {
+      const fullKey = this.getKey(key);
+      const stringValue = JSON.stringify(value);
+      this.storage.setItem(fullKey, stringValue);
+    } catch (e) {
+      console.error('Error saving to storage:', e);
+    }
   }
 
   /**
@@ -38,12 +42,17 @@ export class StorageService {
    * @description Recupera um item do storage e realiza o parse do JSON para o tipo original.
    * @template T O tipo esperado do valor a ser retornado.
    * @param {string} key A chave identificadora do item.
-   * @returns {T | null} O valor convertido para o tipo T ou null caso não exista.
+   * @returns {T | null} O valor convertido para o tipo T ou null caso não exista ou ocorra um erro de parsing.
    */
   public getItem<T>(key: string): T | null {
-    const fullKey = this.getKey(key);
-    const value = this.storage.getItem(fullKey);
-    return value ? (JSON.parse(value) as T) : null;
+    try {
+      const fullKey = this.getKey(key);
+      const value = this.storage.getItem(fullKey);
+      return value ? (JSON.parse(value) as T) : null;
+    } catch (e) {
+      console.error('Error reading from storage:', e);
+      return null;
+    }
   }
 
   /**
