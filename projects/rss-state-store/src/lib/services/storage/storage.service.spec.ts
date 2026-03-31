@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { StorageService } from './storage.service';
 
 interface StorageModelTest {
@@ -20,10 +20,12 @@ describe('StorageService', () => {
       }
 
       storage.clear();
+      vi.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     afterEach(() => {
       storage.clear();
+      vi.restoreAllMocks();
     });
 
     describe(`usando ${storageName}`, () => {
@@ -109,10 +111,38 @@ describe('StorageService', () => {
         expect(sessionStorage.getItem('prefixoTeste:item3')).toBeNull();
         expect(sessionStorage.getItem('outroPrefixo:item4')).toBeNull();
       });
+
+      it('deve retornar null e logar erro se o item do storage for JSON inválido', () => {
+        const key: string = 'invalidJson';
+        storage.setItem(`${prefix}:${key}`, '{"data": "invalid');
+
+        const retrievedValue = storageService.getItem(key);
+        expect(retrievedValue).toBeNull();
+        expect(console.error).toHaveBeenCalledWith(
+          'Error reading from storage:',
+          expect.any(SyntaxError),
+        );
+      });
+
+      it('deve logar erro e não quebrar se setItem exceder a quota', () => {
+        const key: string = 'quotaExceeded';
+        const value = { data: 'largeData' };
+
+        const setItemSpy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+          throw new DOMException('Quota exceeded', 'QuotaExceededError');
+        });
+
+        expect(() => storageService.setItem(key, value)).not.toThrow();
+        expect(console.error).toHaveBeenCalledWith(
+          'Error saving to storage:',
+          expect.any(DOMException),
+        );
+
+        setItemSpy.mockRestore();
+      });
     });
   };
 
-  runTests(); // Testes default para sessionStorage
   runTests(false); // Testes para sessionStorage
   runTests(true); // Testes para localStorage
 });
